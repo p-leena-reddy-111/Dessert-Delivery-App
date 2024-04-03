@@ -1,4 +1,3 @@
-![2](https://github.com/p-leena-reddy-111/Dessert-Delivery-App/assets/105440491/6b4984db-e129-447a-978d-7afad8122c2e)
 # Dessert Delivery App
 Full Stack Project (MERN)
 
