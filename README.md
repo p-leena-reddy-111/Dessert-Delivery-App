@@ -62,4 +62,11 @@ Full Stack Project (MERN)
 
 ![6](https://github.com/p-leena-reddy-111/Dessert-Delivery-App/assets/105440491/47b7922d-3b4b-4cd7-8aea-cb2df89b19db)
 
+##This project demonstrates:
+1.Building a full-stack application with React and Node.js
+2.Implementing user authentication and authorization
+3.Integrating with a MongoDB database for bakery data and user information
+4.Managing application state with Redux
+5.Utilizing Tailwind CSS for rapid UI development
+
 
