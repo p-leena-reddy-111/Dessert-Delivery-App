@@ -15,6 +15,7 @@ Full Stack Project (MERN)
 
 ## Screenshots
 
+## Website
 **HomePage-Web**
 
 ![App Screenshot](https://github.com/p-leena-reddy-111/Dessert-Delivery-App/blob/master/Screenshots/Web/homepage.png?raw=true)
@@ -32,12 +33,7 @@ Full Stack Project (MERN)
 **Cart Page-Web**
 ![cart](https://github.com/p-leena-reddy-111/Dessert-Delivery-App/blob/master/Screenshots/Web/cart-present.png?raw=true)
 
-**Register-Mobile View**
-
-![localhost_3000_register](https://github.com/p-leena-reddy-111/Dessert-Delivery-App/assets/105440491/c5ea0563-332e-4201-b8f9-c3234ad17257)
-
-**Login-Mobile View**
-![localhost_3000_login](https://github.com/p-leena-reddy-111/Dessert-Delivery-App/assets/105440491/2f8e27d4-d7de-486c-9a8c-e0e117bbe9a0)
+## App
 
 **HomePage-Mobile View**
 
