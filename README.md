@@ -1,5 +1,5 @@
 # Dessert Delivery App
-Full Stack Project (MERN)
+Full Stack Project (MERN) 
 
 ## Tech Stack
 
@@ -17,6 +17,7 @@ Full Stack Project (MERN)
 - Integrating with a MongoDB database for bakery data and user information
 - Managing application state with Redux
 - Utilizing Tailwind CSS for rapid UI development
+Note: Payment features and adding bakery options are being developed to further enhance the app's functionality.
 
 ## Screenshots
 
