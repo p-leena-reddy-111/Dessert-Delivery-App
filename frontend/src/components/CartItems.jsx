@@ -1,17 +1,14 @@
 import React from 'react'
-
 import {useNavigate} from 'react-router-dom'
-
 import { useSelector} from 'react-redux';
 import { IoCartOutline } from "react-icons/io5";
 
 const CartItems = () => {
-  const cartitems=useSelector((state)=> state.cartAddedItems);
+  //const cartitems=useSelector((state)=> state.cartAddedItems);
   const navigate=useNavigate();
   const handleBakeryClick=async()=>
   {
-    navigate("/");
-    //navigate(window.location.href);
+    navigate("/home");
   }
   return (
     <div>

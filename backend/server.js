@@ -9,7 +9,7 @@ const bakeryRoute=require("./routes/BakeryRoute.js");
 const menuRoute=require("./routes/MenuRoute.js");
 const cartRoute=require("./routes/CartRoute.js");
 const orderRoute=require("./routes/OrderRoute.js");
-
+const paymentRoutes=require( './routes/PaymentRoute.js' );
 
 dotenv.config()
 
@@ -48,7 +48,7 @@ app.use("/bakeries",bakeryRoute);
 app.use("/menu",menuRoute);
 app.use("/cart",cartRoute);
 app.use("/order",orderRoute);
-
+app.use("/api/payment/",paymentRoutes);
 
 app.listen(8800,()=>{
     connect();

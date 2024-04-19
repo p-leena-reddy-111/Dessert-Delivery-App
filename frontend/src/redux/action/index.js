@@ -71,4 +71,12 @@ export const loginFailure=(error)=>{
     }
 }
 
+export const loginOut=()=>{
+    return (dispatch)=>{
+        dispatch({
+            type:'LOG_OUT'
+        })
+    }
+}
+
 

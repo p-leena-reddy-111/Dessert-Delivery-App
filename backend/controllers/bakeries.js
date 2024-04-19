@@ -1,7 +1,4 @@
-const express=require('express');
-const mongoose=require('mongoose');
 const Bakery=require('../models/bakery.js');
-const menu=require("../models/menu.js");
 
 
 const createBakery = async(req,res,next)=>{
@@ -74,7 +71,6 @@ const getMenu=async(req,res,next)=>{
 const getBakeries=async(req,res,next)=>{
     try
     {
-       /* const Bakerys=await Bakery.find({},{"name": 1,"_id":0});*/
         const Bakeries=await Bakery.find();
         return res.status(200).json(Bakeries);
     }

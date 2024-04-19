@@ -59,6 +59,7 @@ const Bakery = () => {
             <img
               src={item.images}
               alt={item.name}
+              loading="lazy"
               className='w-full h-[200px] object-cover  rounded-t-lg'
             />
             <div className='px-2 py-4'>

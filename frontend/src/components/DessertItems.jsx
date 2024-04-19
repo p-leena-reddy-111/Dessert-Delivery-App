@@ -93,7 +93,7 @@ const DessertItems = () => {
                                         <p className='text-sm sm:text-base md:text-base  max-w-[300px] md:max-w-[600px] overflow-auto break-words'>{menuItem.description}</p>
                                     </div>
                                     <div className='flex flex-col justify-center'>
-                                        <img className='w-[150px] h-[150px] object-cover rounded-xl justify-center'src={menuItem.image} alt={menuItem.name}/>
+                                        <img className='w-[150px] h-[150px] object-cover rounded-xl justify-center'src={menuItem.image} alt={menuItem.name} loading="lazy"/>
                                         <div className='flex justify-center'>
                                         {cart.desserts.find((item) => item._id === menuItem._id) ? (
                                             <button className="bg-white text-yellow-500  font-bold px-2 py-2 me-1 rounded-1xl  hover:bg-yellow-500 hover:text-white hover:border-yellow-500 mt-[-20px]">

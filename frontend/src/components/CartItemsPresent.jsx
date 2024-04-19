@@ -2,13 +2,51 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { actionCreators } from '../redux/index';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
+
 const CartItemsPresent = () => {
   const cart=useSelector((state)=>state.cartAddedItems);
   const [isclicked,setIsClicked]=useState(false);
-  const placeorder=()=>{
+
+  const initPayment=(data)=>{
+    const options={
+      key:"rzp_test_iw9mcQkfN6jfdx",
+      amount:data.amount,
+      currency:data.currency,
+      description:"Test Transaction",
+      order_id:data.id,
+      handler:async(response)=>{
+        try{
+          const verifyUrl="http://localhost:8800/api/payment/verify";
+          const {data}=await axios.post(verifyUrl,response);
+          console.log("initdata:",data);
+        }
+        catch(err){
+          console.log("initerr",err);
+        }
+      },
+      theme:{
+        color:'#3399cc'
+      }
+    }
+    const rzp1=new window.Razorpay(options);
+    rzp1.open();
     setIsClicked(true);
-    //alert("Your order has been placed");
   }
+  const handlePayment= async()=>{
+    try{
+      const orderUrl="http://localhost:8800/api/payment/orders";
+      const {data}=await axios.post(orderUrl,{amount:cart.amount});
+      console.log("data",data);
+      initPayment(data.data);
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
+  }
+
+
   const dispatch=useDispatch();
   return (
     <div>
@@ -52,7 +90,7 @@ const CartItemsPresent = () => {
         </div>
       </div>
       <div className='flex items-center justify-center font-extrabold'>
-        {isclicked===false ? (<button onClick={placeorder} className='text-yellow-500 font-extrabold hover:bg-yellow-500 hover:text-white'>Place Order</button>):(<p>Order Placed!</p>)}
+        {isclicked===false ? (<button onClick={handlePayment} className='text-yellow-500 font-extrabold hover:bg-yellow-500 hover:text-white'>Place Order</button>):(<p>Order Placed!</p>)}
       </div>
 
     </div>

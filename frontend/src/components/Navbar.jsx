@@ -1,28 +1,36 @@
 import React from 'react'
 import {AiOutlineMenu,AiOutlineSearch,AiOutlineClose,AiFillTag} from 'react-icons/ai'
-import {BsFillCartFill,BsFillSafeFill} from 'react-icons/bs'
+import {BsFillCartFill} from 'react-icons/bs'
 import {TbTruckDelivery} from 'react-icons/tb'
 import {FaUserFriends,FaWallet} from 'react-icons/fa'
-import {MdFavorite,MdHelp} from 'react-icons/md'
+import {MdFavorite} from 'react-icons/md'
 import { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import { FaUser } from "react-icons/fa";
 import { useSelector} from 'react-redux';
 import { RiLogoutBoxFill } from "react-icons/ri";
+import { useDispatch } from 'react-redux';
+import { actionCreators } from '../redux/index';
 
 const Navbar = () => {
-  const number=useSelector((state)=> state.number);
   const cart=useSelector((state)=> state.cartAddedItems);
   const username=useSelector((state)=>state.userLoggedIn);
-  console.log("username",username);
+  const dispatch=useDispatch();
   const navigate=useNavigate();
   const [nav,setNav]=useState(false);
 
-  const enterSignIn=()=>{
+  const handleLogout = () => {
+    dispatch(actionCreators.loginOut());
     navigate("/login");
+  }
+  const enterSignIn=()=>{
+    navigate("/");
   }
   const navigateCart=()=>
   {
+    navigate("/cart");
+  }
+  const navigateOrders=()=>{
     navigate("/cart");
   }
   return (
@@ -48,7 +56,7 @@ const Navbar = () => {
         </div>):
          (<div className='flex flex-row items-center justify-center hover:scale-105 duration-100 hover:text-yellow-500 cursor-pointer'>
         <FaUser className='hidden md:flex mr-1'/>
-        <p className='hidden lg:flex' onClick={enterSignIn}>Sign In</p>
+        <p className='hidden lg:flex' onClick={()=>enterSignIn()}>Sign In</p>
       </div>)
       }
       {/*Cart button*/}
@@ -77,12 +85,12 @@ const Navbar = () => {
         </h2>
         <nav>
             <ul className='flex flex-col p-4 text-gray-800'>  
-                <li className='text-xl py-4 flex'><TbTruckDelivery size={25} className='mr-4'/>Orders</li>
-                <li className='text-xl py-4 flex'><MdFavorite size={25} className='mr-4'/>Favorites</li>
-                <li className='text-xl py-4 flex'><FaWallet size={25} className='mr-4'/>Wallet</li>
-                <li className='text-xl py-4 flex'><AiFillTag size={25} className='mr-4'/>Promotions</li>
-                <li className='text-xl py-4 flex'><FaUserFriends size={25} className='mr-4'/>Invite Friends</li>
-                <li className='text-xl py-4 flex'><RiLogoutBoxFill size={25} className='mr-4'/>Logout</li>
+                <li onClick={(navigateOrders)} className='text-xl py-4 flex cursor-pointer'><TbTruckDelivery size={25} className='mr-4'/>Orders</li>
+                <li className='text-xl py-4 flex cursor-pointer'><MdFavorite size={25} className='mr-4'/>Favorites</li>
+                <li className='text-xl py-4 flex cursor-pointer'><FaWallet size={25} className='mr-4'/>Wallet</li>
+                <li className='text-xl py-4 flex cursor-pointer'><AiFillTag size={25} className='mr-4'/>Promotions</li>
+                <li className='text-xl py-4 flex cursor-pointer'><FaUserFriends size={25} className='mr-4'/>Invite Friends</li>
+                <li onClick={handleLogout}className='text-xl py-4 flex cursor-pointer'><RiLogoutBoxFill size={25} className='mr-4'/>Logout</li>
             </ul>
         </nav>
       </div>

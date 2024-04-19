@@ -15,7 +15,6 @@ const authReducer=(state=initialState,action)=>{
     }
     else if (action.type === 'LOGIN_SUCCESS') 
     {
-        console.log("yes, I am in");
         return {
             ...state,
             isLoggedIn:true,
@@ -29,6 +28,15 @@ const authReducer=(state=initialState,action)=>{
             ...state,
             loading:false,
             error:action.payload
+        }
+    }
+    else if(action.type==="LOG_OUT")
+    {
+        return{
+            ...state,
+            isLoggedIn:false,
+            username:'',
+            loading:false,
         }
     }
     else

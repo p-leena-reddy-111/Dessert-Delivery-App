@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import Cookies from "universal-cookie";
+import image from "../images/frontpageimage.avif";
 const cookies=new Cookies();
 const Register = () => {
   const [username,setUsername]=useState("");
@@ -47,8 +48,11 @@ const Register = () => {
   }
   return (
     <div>
-
-        <div className="bg-white shadow-md border-4 rounded-3xl px-8 py-3 mx-auto mt-3 w-full max-w-md">
+      <div className='flex items-center justify-between gap-6'>  
+        <div className="hidden md:flex max-w-[1000px]">
+          <img className="object-cover h-screen" src={image} alt="/"></img> 
+        </div>
+        <div className="bg-white shadow-md rounded-lg px-8 py-5 mx-auto lg:mx-auto w-full md:max-w-md border-4 mt-20 max-w-sm md:mr-5">
         <h2 className="text-2xl font-bold text-black mb-6">Register</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="mb-2">
@@ -148,6 +152,7 @@ const Register = () => {
         <p className="text-green-500">You Are Registered Successfully!</p>
          </div>):(<></>)
       }
+      </div>
     </div>
   )
 }
