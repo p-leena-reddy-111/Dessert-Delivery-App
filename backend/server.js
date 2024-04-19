@@ -50,7 +50,7 @@ app.use("/cart",cartRoute);
 app.use("/order",orderRoute);
 app.use("/api/payment/",paymentRoutes);
 
-app.listen(8800,()=>{
+app.listen(process.env.PORT,()=>{
     connect();
     //console.log(__dirname);
     console.log("Connected to the server");
