@@ -12,11 +12,12 @@ Full Stack Project (MERN)
 **Language:** Javascript
 
 ## This project demonstrates:
-- Building a full-stack application with React and Node.js
-- Implementing user authentication and authorization
-- Integrating with a MongoDB database for bakery data and user information
-- Managing application state with Redux
-- Utilizing Tailwind CSS for rapid UI development
+- Building a full-stack application with React and Node.js.
+- Implementing user authentication and authorization for registration and login.
+- Integrating with a MongoDB database for bakery data and user information.
+- Managing application state with Redux.
+- Utilizing Tailwind CSS for rapid UI development.
+- Implementing Razorpay payment gateway integration for secure and efficient in-app transactions.
 #### Note: Payment feature and adding bakery options are being developed to further enhance the app's functionality.
 
 ## Screenshots
