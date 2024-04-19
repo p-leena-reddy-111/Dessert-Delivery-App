@@ -21,7 +21,7 @@ const connect =async()=>{
         await mongoose.connect(process.env.mongo);
         
         //console.log('Mongoose version:', mongoose.version);
-        console.log("Connected to mongodb");
+        //console.log("Connected to mongodb");
     }
     catch(err)
     {
@@ -50,9 +50,9 @@ app.use("/cart",cartRoute);
 app.use("/order",orderRoute);
 app.use("/api/payment/",paymentRoutes);
 
-app.listen(process.env.PORT,()=>{
+app.listen(8800,()=>{
     connect();
     //console.log(__dirname);
-    console.log("Connected to the server");
+    //console.log("Connected to the server");
 })
  
